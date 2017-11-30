@@ -1,0 +1,6 @@
+# AWS CodeDeploy config file
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/truefacets
