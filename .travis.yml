@@ -21,6 +21,6 @@ deploy:
     secret_access_key: $AWS_CI_SECRET
     application: miniature-bassoon
     deployment_group: Test-EC2
-    region: us-west-2b
+    region: us-west-2
     on:
       repo: PeteFromSales/miniature-bassoon
