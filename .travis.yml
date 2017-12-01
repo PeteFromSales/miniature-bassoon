@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "node"
+  - "lts/*"
   - "8"
 
 cache:
@@ -13,10 +13,12 @@ before_script:
 script: npm run build
 
 deploy:
-  - provider: codedeploy
+    provider: codedeploy
     revision_type: github
     access_key_id: $AWS_CI_ACCESS_KEY
     secret_access_key: $AWS_CI_SECRET
-    application: "miniature-bassoon"
-    deployment_group: "Test-EC2"
-    region: "us-west-2b"
+    application: miniature-bassoon
+    deployment_group: Test-EC2
+    region: us-west-2b
+    on:
+      repo: PeteFromSales/miniature-bassoon
