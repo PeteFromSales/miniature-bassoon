@@ -38,13 +38,13 @@ deploy:
   skip_cleanup: true
   #
   # Code deploy
-  provider: codedeploy
-  access_key_id: $AWS_CI_ACCESS_KEY
-  secret_access_key: $AWS_CI_SECRET
-  bucket: miniature-bassoon
-  key: "latest/miniature-bassoon.zip"
-  application: miniature-bassoon
-  deployment_group: Test-EC2
-  region: us-west-2
-  on:
-    branch: master
+  # provider: codedeploy
+  # access_key_id: $AWS_CI_ACCESS_KEY
+  # secret_access_key: $AWS_CI_SECRET
+  # bucket: miniature-bassoon
+  # key: "latest/miniature-bassoon.zip"
+  # application: miniature-bassoon
+  # deployment_group: Test-EC2
+  # region: us-west-2
+  # on:
+  #   branch: master
