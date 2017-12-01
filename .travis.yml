@@ -9,8 +9,8 @@ cache:
 before_script:
   # https://github.com/npm/npm/issues/19019#issuecomment-341978497
   - npm uninstall -g npm
-  - npm install -g npm@5.3.x
-  - npm install -g webpack grunt
+  - npx npmc install -g npm@5.3.x
+  - npx npmc install -g webpack grunt
 
 script: npm run build
 
