@@ -41,9 +41,9 @@ jobs:
 
       # run tests!
       # - run: yarn test
-deployment:
-  staging:
-    branch: master
-    codedeploy:
-      miniature-bassoon:
-        deployment_group: Test-EC2
+  deployment:
+    staging:
+      branch: master
+      codedeploy:
+        miniature-bassoon:
+          deployment_group: Test-EC2
