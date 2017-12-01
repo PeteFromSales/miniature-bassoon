@@ -14,13 +14,26 @@ cache:
 
 script: npm run build
 
+# Deployment with Github revision
+# deploy:
+#     provider: codedeploy
+#     revision_type: github
+#     access_key_id: $AWS_CI_ACCESS_KEY
+#     secret_access_key: $AWS_CI_SECRET
+#     application: miniature-bassoon
+#     deployment_group: Test-EC2
+#     region: us-west-2
+#     on:
+#       repo: PeteFromSales/miniature-bassoon
+
+# Deployment to S3
 deploy:
-    provider: codedeploy
-    revision_type: github
-    access_key_id: $AWS_CI_ACCESS_KEY
-    secret_access_key: $AWS_CI_SECRET
-    application: miniature-bassoon
-    deployment_group: Test-EC2
-    region: us-west-2
-    on:
-      repo: PeteFromSales/miniature-bassoon
+  provider: codedeploy
+  access_key_id: $AWS_CI_ACCESS_KEY
+  secret_access_key: $AWS_CI_SECRET
+  bucket: miniature-bassoon
+  key: latest/miniature-bassoon.zip
+  application: miniature-bassoon
+  deployment_group: Test-EC2
+  on:
+    branch: master
