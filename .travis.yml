@@ -28,12 +28,23 @@ script: npm run build
 
 # Deployment to S3
 deploy:
+  # S3
+  provider: s3
+  access_key_id: $AWS_CI_ACCESS_KEY
+  secret_access_key: $AWS_CI_SECRET
+  bucket: miniature-bassoon
+  region: us-east-1
+  #prevent Travis CI from deleting your build artifacts
+  skip_cleanup: true
+  #
+  # Code deploy
   provider: codedeploy
   access_key_id: $AWS_CI_ACCESS_KEY
   secret_access_key: $AWS_CI_SECRET
   bucket: miniature-bassoon
-  key: latest/miniature-bassoon.zip
+  key: "latest/miniature-bassoon.zip"
   application: miniature-bassoon
   deployment_group: Test-EC2
+  region: us-west-2
   on:
     branch: master
